@@ -30,7 +30,7 @@ declare module "spotify-oauth-refresher" {
   }
 
   export interface UpdaterConfig {
-    clientSecret?: string;
+    clientSecret: string;
     clientId: string;
   }
 
