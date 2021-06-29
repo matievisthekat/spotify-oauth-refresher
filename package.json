@@ -1,6 +1,6 @@
 {
   "name": "spotify-oauth-refresher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Refresh your Spotify access tokens, simple and easy",
   "main": "src/index.js",
   "repository": "https://github.com/matievisthekat/spotify-oauth-refresher",
