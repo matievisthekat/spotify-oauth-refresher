@@ -35,7 +35,7 @@ Then you are ready to go. Import the package into your project and start using i
 
 ```js
 const Updater = require("spotify-oauth-refresher");
-const api = new Updater({ clientId: "xxxxx", clientSecret: "xxxxx" }); // clientSecret is optional. See documentation below
+const api = new Updater({ clientId: "xxxxx", clientSecret: "xxxxx" });
 
 const me = await api.request({
   url: "https://api.spotify.com/v1/me",
@@ -92,7 +92,7 @@ console.log(me.id);
 
 - <small>get</small> `refreshToken` **_<string | undefined>_** The current refresh token in use
 
-- <small>get</small> `base64Creds` **_\<string\>_** Base64 encoded client credentials. Only use when clientSecret is provided
+- <small>get</small> `base64Creds` **_\<string\>_** Base64 encoded client credentials
 
 - `storage` **_\<[Storage](#cls-storage) | [Cookies](https://github.com/reactivestack/cookies/blob/master/packages/universal-cookie/README.md "Universal-cookie documentation for the Cookies class")\>_** The storage class. In browser environments it is an instance of the `universal-cookie` class. Otherwise it is an instance of the Storage class
 
@@ -117,7 +117,7 @@ console.log(me.id);
 #### `interface` <span id="int-updater-config">UpdaterConfig</span>
 
 - `clientId`: **_<string, required>_** The id of your Spotify client
-- `clientSecret` **_<string, optional>_** The secret of your Spotify client. Leave undefined if you don't intend on requesting any endpoints that require the `basic` authType
+- `clientSecret` **_<string, required>_** The secret of your Spotify client
 
 #### `interface` <span id="int-updater-request-config">UpdaterRequestConfig</span> <small>extends [AxiosRequestConfig](https://github.com/axios/axios#request-config "Axios documentation of AxiosRequestConfig")</small>
 

@@ -9,10 +9,11 @@ module.exports = class Updater {
   constructor(conf) {
     if (!conf) throw new Error("[Updater.constructor] No config provided");
     const { clientId, clientSecret } = conf;
+
     if (!clientId) throw new Error("[Updater.constructor] No clientId provided");
+    if (!clientSecret) throw new Error("[Updater.constructor] No clientSecret provided");
     if (typeof clientId !== "string") throw new TypeError("[Updater.constructor] clientId is not a string");
-    if (clientSecret && typeof clientSecret !== "string")
-      throw new TypeError("[Updater.constructor] clientSecret is not a string");
+    if (typeof clientSecret !== "string") throw new TypeError("[Updater.constructor] clientSecret is not a string");
 
     this.clientId = clientId;
     this.clientSecret = clientSecret;
@@ -80,9 +81,8 @@ module.exports = class Updater {
    */
   request(config) {
     if (!config.headers) config.headers = {};
+
     if (config.authType === "bearer" && !this.accessToken) throw new Error("[Updater.request] No access token set");
-    if (config.authType === "basic" && !this.clientSecret)
-      throw new Error("[Updater.request] clientSecret must be provided to use 'basic' authType");
 
     if (config.authType === "bearer") config.headers.Authorization = `Bearer ${this.accessToken}`;
     if (config.authType === "basic") config.headers.Authorization = `Basic ${this.base64Creds}`;
