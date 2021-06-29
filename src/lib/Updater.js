@@ -3,7 +3,7 @@ const Storage = require("./Storage");
 const qs = require("querystring");
 const { cookies } = require("../util");
 
-class Updater {
+module.exports = class Updater {
   storage = new Storage();
 
   constructor({ clientId, clientSecret }) {
@@ -95,6 +95,4 @@ class Updater {
         });
     });
   }
-}
-
-module.exports = Updater;
+};
