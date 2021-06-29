@@ -14,7 +14,7 @@ import { AxiosPromise, AxiosRequestConfig } from "axios";
     public setRefreshToken(token: string): this;
 
     public request<T = any>(config: UpdaterRequestConfig): AxiosPromise<T>;
-    public refresh(): Promise<void>;
+    private refresh(): Promise<void>;
   };
 
   export interface UpdaterRequestConfig extends AxiosRequestConfig {
