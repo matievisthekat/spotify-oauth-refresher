@@ -1,4 +1,4 @@
-const Cookies = require("universal-cookie");
+const Cookies = require("universal-cookie").default;
 
 class Storage {
   constructor() {
