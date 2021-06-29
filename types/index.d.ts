@@ -1,10 +1,11 @@
 import { AxiosPromise, AxiosRequestConfig } from "axios";
+import Cookies from "universal-cookie";
 
 declare module "spotify-oauth-refresher" {
   export default class Updater {
     constructor(config: UpdaterConfig);
 
-    public storage: Storage;
+    public storage: Storage | Cookies;
 
     public get accessToken(): string | undefined;
     public get refreshToken(): string | undefined;
@@ -17,6 +18,13 @@ declare module "spotify-oauth-refresher" {
     private refresh(): Promise<void>;
   }
 
+  export class Storage {
+    constructor();
+
+    get<T = any>(name: string): T;
+    set(name: string, value: any): this;
+  }
+
   export interface UpdaterRequestConfig extends AxiosRequestConfig {
     authType?: AuthType;
   }
@@ -24,11 +32,6 @@ declare module "spotify-oauth-refresher" {
   export interface UpdaterConfig {
     clientSecret?: string;
     clientId: string;
-  }
-
-  export interface Storage {
-    get<T = any>(name: string): T;
-    set(name: string, value: any): void;
   }
 
   export type AuthType = "basic" | "bearer";
