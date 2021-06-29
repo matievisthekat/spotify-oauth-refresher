@@ -1,0 +1,23 @@
+{
+  "name": "spotify-oauth-refresher",
+  "version": "1.0.0",
+  "description": "Refresh your Spotify access tokens, simple and easy",
+  "main": "src/index.js",
+  "repository": "https://github.com/matievisthekat/spotify-oauth-refresher",
+  "author": "Matthew Stead <matievisthekat@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "types": "types/index.d.ts",
+  "typings": "types/index.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "universal-cookie": "^4.0.4"
+  }
+}
