@@ -1,7 +1,7 @@
 import { AxiosPromise, AxiosRequestConfig } from "axios";
 
-declare module "spotify-oauth-refresher" {
-  export = class Updater {
+// declare module "spotify-oauth-refresher" {
+  export default class Updater {
     constructor(config: UpdaterConfig);
 
     public storage: Storage;
@@ -18,7 +18,7 @@ declare module "spotify-oauth-refresher" {
   };
 
   export interface UpdaterRequestConfig extends AxiosRequestConfig {
-    authType: Auth;
+    authType?: Auth;
   }
 
   export interface UpdaterConfig {
@@ -32,4 +32,4 @@ declare module "spotify-oauth-refresher" {
   }
 
   export type Auth = "basic" | "bearer";
-}
+// }
