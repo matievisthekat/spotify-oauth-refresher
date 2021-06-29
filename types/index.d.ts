@@ -1,6 +1,6 @@
 import { AxiosPromise, AxiosRequestConfig } from "axios";
 
-// declare module "spotify-oauth-refresher" {
+declare module "spotify-oauth-refresher" {
   export default class Updater {
     constructor(config: UpdaterConfig);
 
@@ -15,14 +15,14 @@ import { AxiosPromise, AxiosRequestConfig } from "axios";
 
     public request<T = any>(config: UpdaterRequestConfig): AxiosPromise<T>;
     private refresh(): Promise<void>;
-  };
+  }
 
   export interface UpdaterRequestConfig extends AxiosRequestConfig {
-    authType?: Auth;
+    authType?: AuthType;
   }
 
   export interface UpdaterConfig {
-    clientSecret: string;
+    clientSecret?: string;
     clientId: string;
   }
 
@@ -31,5 +31,5 @@ import { AxiosPromise, AxiosRequestConfig } from "axios";
     set(name: string, value: any): void;
   }
 
-  export type Auth = "basic" | "bearer";
-// }
+  export type AuthType = "basic" | "bearer";
+}
