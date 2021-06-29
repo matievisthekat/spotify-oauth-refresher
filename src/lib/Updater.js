@@ -6,7 +6,9 @@ const { cookies } = require("../util");
 module.exports = class Updater {
   storage = new Storage();
 
-  constructor({ clientId, clientSecret }) {
+  constructor(conf) {
+    if (!conf) throw new Error("[Updater.constructor] No config provided");
+    const { clientId, clientSecret } = conf;
     if (!clientId) throw new Error("[Updater.constructor] No clientId provided");
     if (typeof clientId !== "string") throw new TypeError("[Updater.constructor] clientId is not a string");
     if (clientSecret && typeof clientSecret !== "string")
