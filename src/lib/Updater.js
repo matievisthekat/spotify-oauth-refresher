@@ -94,7 +94,7 @@ module.exports = class Updater {
       axios(config)
         .then((res) => resolve(res))
         .catch((err) => {
-          const msg = err.response.data.error.message;
+          const msg = err?.response?.data?.error?.message;
           if (msg === "The access token expired") {
             this.refresh()
               .then(async () => resolve(await this.request(config)))
