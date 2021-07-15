@@ -41,7 +41,7 @@ module.exports = class Updater {
     if (!token) throw new Error("[Updater.setAccessToken] No token provided");
     if (typeof token !== "string") throw new TypeError("[Updater.setAccessToken] Token is not a string");
 
-    this.storage.set(cookies.accessToken, token);
+    this.storage.set(cookies.accessToken, token, { path: "/" });
     return this;
   }
 
@@ -55,7 +55,7 @@ module.exports = class Updater {
     if (!token) throw new Error("[Updater.setRefreshToken] No token provided");
     if (typeof token !== "string") throw new TypeError("[Updater.setRefreshToken] Token is not a string");
 
-    this.storage.set(cookies.refreshToken, token);
+    this.storage.set(cookies.refreshToken, token, { path: "/" });
     return this;
   }
 

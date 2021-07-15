@@ -5,7 +5,7 @@ class Storage {
     this.data = {};
   }
 
-  set(name, value) {
+  set(name, value, _) {
     this.data[name] = value;
     return this;
   }

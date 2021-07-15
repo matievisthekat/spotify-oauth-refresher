@@ -1,5 +1,5 @@
 import { AxiosPromise, AxiosRequestConfig } from "axios";
-import Cookies from "universal-cookie";
+import Cookies, { CookieGetOptions, CookieSetOptions } from "universal-cookie";
 
 declare module "spotify-oauth-refresher" {
   export default class Updater {
@@ -22,7 +22,7 @@ declare module "spotify-oauth-refresher" {
     constructor();
 
     get<T = any>(name: string): T;
-    set(name: string, value: any): this;
+    set(name: string, value: any, opts: CookieSetOptions): this;
   }
 
   export interface UpdaterRequestConfig extends AxiosRequestConfig {
