@@ -37,6 +37,10 @@ Then you are ready to go. Import the package into your project and start using i
 const Updater = require("spotify-oauth-refresher");
 const api = new Updater({ clientId: "xxxxx", clientSecret: "xxxxx" });
 
+api.setAccessToken("xxxxx");
+api.setRefreshToken("xxxxx");
+
+// You will never need to manually refresh your access token again!
 const me = await api.request({
   url: "https://api.spotify.com/v1/me",
   method: "get",
