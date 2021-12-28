@@ -14,6 +14,9 @@ declare module "spotify-oauth-refresher" {
     public setAccessToken(token: string): this;
     public setRefreshToken(token: string): this;
 
+    public removeAccessToken(): this;
+    public removeRefreshToken(): this;
+
     public request<T = any>(config: UpdaterRequestConfig): AxiosPromise<T>;
     private refresh(): Promise<void>;
   }

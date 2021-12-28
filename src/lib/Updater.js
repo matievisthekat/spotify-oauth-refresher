@@ -60,6 +60,26 @@ module.exports = class Updater {
   }
 
   /**
+   * @returns {this} The updater class
+   * @example
+   * updater.removeAccessToken();
+   */
+  removeAccessToken() {
+    this.storage.remove(cookies.accessToken);
+    return this;
+  }
+
+  /**
+   * @returns {this} The updater class
+   * @example
+   * updater.removeRefreshToken();
+   */
+  removeRefreshToken() {
+    this.storage.remove(cookies.refreshToken);
+    return this;
+  }
+
+  /**
    * @param {UpdaterRequestConfig} config Request config for Axios
    * @returns {AxiosPromise} The response from the Spotify API in the form of an AxiosPromise
    * @example
