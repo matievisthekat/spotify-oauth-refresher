@@ -77,6 +77,20 @@ console.log(me.id);
   - returns
     - `this` The current class instance
 
+- `removeAccessToken`
+  
+  - args
+    - `none`
+  - returns
+    - `this` The current class instance
+
+- `removeRefreshToken`
+  
+  - args
+    - `none`
+  - returns
+    - `this` The current class instance
+
 - `request`
 
   - args
