@@ -119,7 +119,7 @@ module.exports = class Updater {
             this.refresh()
               .then(async () => resolve(await this.request(config)))
               .catch(reject);
-          } else reject(err.response.data);
+          } else reject(err.response?.data);
         });
     });
   }
