@@ -1,3 +1,5 @@
+`⚠️ This code is far out-of-date, will never be updated, and has been archived. Better alternatives exist`
+
 # Spotify OAuth Refresher
 
 Refresh your Spotify access tokens, simple and easy
